@@ -210,16 +210,16 @@ a {
   align-items: center;
 }
 
-.nav-items :hover {
-  color: hsl(var(--primary));
-}
-
 .nav-link {
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.25rem;
   text-decoration: inherit;
   margin-left: 2.5rem;
+}
+
+.nav-items :hover {
+  color: hsl(var(--primary));
 }
 
 .resume-btn {
@@ -233,6 +233,12 @@ a {
   height: 2.25rem;
   display: inline-flex;
   color: hsl(var(--primary-foreground));
+  margin-left: 2rem;
+}
+
+.resume-btn :hover {
+  background-color: hsl(var(--primary) / 0.9);
+  color: #fff;
 }
 
 ul {
@@ -253,6 +259,14 @@ ul {
   width: 2.25rem;
   height: 2.25rem;
   display: inline-flex;
+  margin-left: 2rem;
+}
+
+.theme-toggle :hover {
+  color: hsl(var(--accent-foreground));
+  background-color: hsl(var(--accent));
+  border-radius: 9999px;
+  width: 100%;
 }
 
 .theme-toggle button,
