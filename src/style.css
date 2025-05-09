@@ -310,7 +310,7 @@ ul {
   border-width: 0;
 }
 .section-hero {
-  padding-top: 4rem;
+  /* padding-top: 4rem; */
   overflow: hiddden;
   display: flex;
   align-items: center;
@@ -318,7 +318,7 @@ ul {
   min-height: 100vh;
 }
 
-div-home {
+.div-home {
   opacity: 70;
   z-index: -10;
   top: 0;
