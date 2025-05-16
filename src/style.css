@@ -336,8 +336,7 @@ ul {
   display: flex;
   margin-right: auto;
   margin-left: auto;
-  max-width: 80rem;
-  padding: 6rem 1rem;
+  max-width: 80vw;
 }
 
 @media (min-width: 1024px) {
@@ -733,7 +732,7 @@ a {
 
 .section-heading {
   position: relative;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   display: inline-block;
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -991,5 +990,167 @@ a {
 }
 
 .about-heading {
-  padding-left: 2.5rem;
+  padding-left: 3.5rem;
+}
+
+.project-section {
+  padding-top: 3.5rem;
+  background-color: hsl(var(--background) / 0.5);
+}
+
+.section-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80rem;
+}
+
+.projection-desc {
+  color: hsl(var(--muted-foreground));
+  max-width: 42rem;
+  margin-bottom: 3rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile first */
+  gap: 2rem; /* Equivalent to Tailwind's gap-8 */
+
+  /* Medium screens (≥768px) */
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Large screens (≥1024px) */
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.project-card {
+  background-color: hsl(var(--card));
+  border-color: hsl(var(--border));
+  border-width: 1px;
+  border-style: solid;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.project-pics {
+  background-color: hsl(var(--muted));
+  overflow: hidden;
+  height: 12rem; /* 48 * 0.25rem (Tailwind spacing unit) */
+  position: relative;
+}
+
+.pic-overflow {
+  overflow: hidden;
+}
+
+.span-pic {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  color: transparent;
+}
+
+.project-img {
+  transition-property: all;
+  transition-duration: 0.5s;
+  transform: scale(1);
+  filter: blur(0);
+  width: 100%;
+  height: 12rem; /* 48 * 0.25rem */
+  object-fit: cover;
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(
+    var(--primary),
+    0.2
+  ); /* Assuming --primary is the base color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.project-overlay:hover {
+  opacity: 1;
+}
+
+.project-link {
+  display: flex;
+}
+
+.project-link-a {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  padding: 0.5rem;
+  border-radius: 9999px;
+}
+
+.pj-content {
+  padding: 1.5rem;
+}
+
+.project-title {
+  color: hsl(var(--foreground));
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.project-description {
+  color: hsl(var(--muted-foreground));
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.skills {
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.project-skill {
+  color: hsl(var(--primary));
+  font-size: 0.75rem;
+  line-height: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  background-color: hsl(var(--primary) / 0.1);
+  border-radius: 9999px;
+}
+
+.external-link-div {
+  display: flex;
+  padding-top: 0.5rem;
+  gap: 0.75rem;
+}
+
+.external-link {
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  background-color: hsl(var(--background));
+  border-radius: calc(var(--radius)- 2px);
+  border-color: hsl(var(--input));
+  border-width: 1px;
+  white-space: nowrap;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  height: 2.25rem;
+  display: flex;
+  text-decoration: none;
 }
