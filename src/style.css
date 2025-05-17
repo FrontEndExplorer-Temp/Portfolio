@@ -1264,7 +1264,7 @@ a {
   display: flex;
   margin-right: auto;
   margin-left: auto;
-  max-width: 80vw;
+  max-width: 80rem;
 }
 
 .section-heading {
@@ -1369,4 +1369,274 @@ a {
 .skill-span:hover {
     transform: scale(1.05);
   background-color: rgba(var(--primary),0.05);
+}
+.section-achievement{
+  padding-top: 3.5rem;
+  background-color: hsl(var(--background)/ .5)
+}
+
+.section-container {
+  gap: 2.5rem;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 80rem;
+}
+
+.section-heading {
+  position: relative;
+  margin-bottom: 2rem;
+  display: inline-block;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.section-heading:after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  height: 0.25rem;
+  width: 33.333333%;
+  border-radius: 0.25rem;
+  background-color: hsl(var(--primary));
+}
+
+.desc-achievements{
+    color: hsl(var(--muted-foreground));
+  max-width: 42rem;
+  margin-bottom: 3rem;
+}
+
+.achievement-slide-menu{
+  display:flex;
+  margin-bottom: 1.5rem;
+  justify-content: space-between;
+}
+
+.drag-explore{
+  color: hsl(var(--muted-foreground));
+  align-items: center;
+  display: flex;
+}
+
+.drag-explore svg{
+  width: 1rem;
+  height: 1rem;
+  margin-right: .5rem;
+}
+
+.drag-explore span{
+      font-size: .875rem;
+    line-height: 1.25rem;
+}
+
+/* Show this only on md and up (≥768px) */
+@media (min-width: 768px) {
+    .show-on-md {
+        display: inline;
+    }
+    .hide-on-md {
+        display: none;
+    }
+}
+
+/* Optionally ensure it's hidden by default for show-on-md */
+.show-on-md {
+    display: none;
+}
+
+/* And visible by default for hide-on-md */
+.hide-on-md {
+    display: inline;
+}
+
+.prev-next{
+  display: flex;
+  --tw-space-x-reverse: 0;
+  margin-right: calc(.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.prev-achievement {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* gap-2 = 8px */
+  white-space: nowrap;
+
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+
+  height: 2.5rem; /* h-10 = 40px */
+  width: 2.5rem;  /* w-10 = 40px */
+  border-radius: 9999px; /* rounded-full */
+  border: 1px solid hsl(var(--input)); /* border-input */
+  background-color: hsl(var(--background)); /* bg-background */
+  color: inherit;
+
+  transition: color 0.2s, background-color 0.2s;
+  ring-offset-color: hsl(var(--background));
+}
+
+.prev-achievement:hover {
+  background-color: hsl(var(--accent)); /* hover:bg-accent */
+  color: hsl(var(--accent-foreground)); /* hover:text-accent-foreground */
+}
+
+.prev-achievement:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ring), 0 0 0 4px var(--ring-offset); 
+  /* focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 */
+}
+
+.prev-achievement:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Targeting any SVG inside */
+.prev-achievement svg {
+  pointer-events: none;
+  width: 1rem; /* size-4 = 16px */
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+.next-achievement {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* gap-2 = 8px */
+  white-space: nowrap;
+
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500;    /* font-medium */
+
+  height: 2.5rem;      /* h-10 = 40px */
+  width: 2.5rem;       /* w-10 = 40px */
+  border-radius: 9999px; /* rounded-full */
+  border: 1px solid hsl(var(--input)); /* border-input */
+  background-color: hsl(var(--background)); /* bg-background */
+  color: inherit;
+
+  transition: color 0.2s, background-color 0.2s;
+  ring-offset-color: hsl(var(--background)); /* ring-offset-background */
+}
+
+.next-achievement:hover {
+  background-color: hsl(var(--accent)); /* hover:bg-accent */
+  color: hsl(var(--accent-foreground)); /* hover:text-accent-foreground */
+}
+
+.next-achievement:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(var(--ring)), 0 0 0 4px hsl(var(--ring-offset)); 
+  /* focus-visible:ring-2 ring-ring + ring-offset-2 */
+}
+
+.next-achievement:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Targeting any SVG inside */
+.next-achievement svg {
+  pointer-events: none;
+  width: 1rem;  /* size-4 = 16px */
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+.achievement-content {
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 1.5rem; /* pb-6 = 24px */
+  gap: 1.5rem; /* space-x-6 = 24px horizontal spacing */
+  scroll-snap-type: x mandatory; /* snap-x */
+  cursor: grab;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.achievement-content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.achieve-card {
+  min-width: 300px;
+  max-width: 300px;
+  background-color: hsl(var(--card));
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; /* shadow-sm */
+  border: 1px solid hsl(var(--border));
+  scroll-snap-align: center;
+  user-select: none;
+  opacity: 1;
+  transform: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;}
+
+.achieve-card:hover {
+  transform: scale(1.02);
+  /* Optional: increase shadow slightly to reinforce hover state */
+  box-shadow:
+    rgba(0, 0, 0, 0.04)0px 10px 25px -5px;
+}
+
+.content-achiv{
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.achieve-svg{
+  color: rgb(22 163 74 / 1);
+  padding: .5rem;
+  background-color: #dcfce7cc;
+  border-radius: 9999px;
+  margin-right: .75rem;
+}
+
+.achieve-svg svg{
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.achieved-year{
+  color: hsl(var(--muted-foreground));
+  font-weight: 400;
+  font-size: .875rem;
+  line-height: 1.25rem;
+}
+
+.title-achievement{
+  color: hsl(var(--foreground));
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.achievement-desc{
+  color: hsl(var(--muted-foreground));
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.tag-achieve{
+  color: rgb(22 163 74 / 1);
+  background-color: #dcfce7cc;
+  font-size: .75rem;
+  line-height: 1rem;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  border-radius: 9999px;
 }
