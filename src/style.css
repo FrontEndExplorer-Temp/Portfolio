@@ -148,26 +148,29 @@ html {
   padding-top: 1rem;
   padding-bottom: 1rem;
   width: 100%;
+  transition: all 0.3s ease;
   top: 0;
 }
 
 .nav-rl {
-  max-width: 80rem;
-  margin-left: auto;
+  max-width: 80rem; /* max-w-7xl = 1280px = 80rem */
+  margin-left: auto; /* mx-auto = center horizontally */
   margin-right: auto;
-}
-
-@media (min-width: 1024px) {
-  .nav-rl {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
+  padding-left: 1rem; /* px-4 = 16px left & right */
+  padding-right: 1rem;
 }
 
 @media (min-width: 640px) {
   .nav-rl {
-    padding-left: 1.5rem;
+    padding-left: 1.5rem; /* sm:px-6 = 24px */
     padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-rl {
+    padding-left: 2rem; /* lg:px-8 = 32px */
+    padding-right: 2rem;
   }
 }
 
@@ -179,8 +182,8 @@ html {
 }
 
 .logo {
-  align-items: center;
   display: flex;
+  align-items: center;
 }
 
 a {
@@ -195,31 +198,76 @@ a {
   color: hsl(var(--primary));
 }
 
-.nav-res {
-  display: none;
+/* Mobile menu: hidden by default */
+.mobile-menu {
+  position: absolute;
+  top: 100%; /* directly under navbar */
+  right: 1rem;
+  background-color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-@media (max-width: 768px) {
+/* Show mobile menu when active */
+.mobile-menu.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Hide on desktop */
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none !important;
+  }
+
   .nav-res {
-    display: block;
+    display: flex;
+  }
+
+  .nav-res1 {
+    display: none;
+  }
+}
+
+/* Show toggle button only on mobile */
+@media (max-width: 767px) {
+  .nav-res {
+    display: none;
+  }
+
+  .nav-res1 {
+    display: flex;
+    align-items: center;
   }
 }
 
 .nav-items {
+  margin-left: 2.5rem;
   display: flex;
   align-items: center;
+  gap: 2rem;
 }
 
 .nav-link {
-  font-weight: 500;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  text-decoration: inherit;
-  margin-left: 2.5rem;
+  font-size: 0.875rem; /* text-sm = 14px = 0.875rem */
+  font-weight: 500; /* font-medium */
+  transition: color 0.2s ease; /* transition-colors */
+  color: inherit; /* assumes default text color */
+  text-decoration: none; /* optional, to remove underline if needed */
 }
 
-.nav-items :hover {
-  color: hsl(var(--primary));
+.nav-link:hover {
+  color: hsl(var(--primary)); /* hover:text-primary */
 }
 
 .resume-btn {
@@ -234,64 +282,114 @@ a {
   display: inline-flex;
   color: hsl(var(--primary-foreground));
   margin-left: 2rem;
+  transition: color 0.2s, background-color 0.2s;
 }
 
-.resume-btn :hover {
+.resume-btn:hover {
   background-color: hsl(var(--primary) / 0.9);
   color: #fff;
 }
 
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* Tailwind's gap-2 = 0.5rem */
+  white-space: nowrap;
+  font-size: 0.875rem; /* Tailwind's text-sm = 14px = 0.875rem */
+  font-weight: 500; /* Tailwind's font-medium */
+  outline: none;
+  transition: color 0.2s, background-color 0.2s; /* Tailwind's transition-colors */
+  height: 2.25rem; /* h-9 = 36px */
+  width: 2.25rem; /* w-9 = 36px */
+  border-radius: 9999px; /* rounded-full = fully rounded */
+  pointer-events: auto;
+}
+
+/* Ring and focus styles */
+.toggle-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(var(--ring-color)),
+    0 0 0 4px hsl(var(--background-color)); /* simulate ring + ring-offset */
+}
+
+/* Hover state */
+.toggle-btn:hover {
+  background-color: hsl(var(--accent)); /* hover:bg-accent */
+  color: hsl(var(--accent-foreground)); /* hover:text-accent-foreground */
+}
+
+/* Disabled state */
+.toggle-btn:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* SVG inside the button */
+.toggle-btn svg {
+  pointer-events: none;
+  width: 1rem; /* size-4 = 16px */
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+.open-menu {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem; /* p-2 = 8px */
+  margin-left: 0.5rem; /* ml-2 = 8px */
+  border-radius: 0.375rem; /* rounded-md = 6px */
+  color: #9ca3af; /* text-gray-400 (default Tailwind gray-400) */
+  outline: none;
+  transition: color 0.2s ease;
+}
+
+.open-menu:hover {
+  color: hsl(var(--primary)); /* hover:text-primary */
+}
+
+.open-menu:focus {
+  outline: none; /* focus:outline-none */
 }
 
 .theme-toggle {
-  font-weight: 500;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  border-radius: 9999px;
-  white-space: nowrap;
-  gap: 0.5rem;
-  justify-content: center;
-  align-items: center;
-  width: 2.25rem;
-  height: 2.25rem;
   display: inline-flex;
-  margin-left: 2rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* gap-2 = 8px */
+  white-space: nowrap;
+  font-size: 0.875rem; /* text-sm = 14px */
+  font-weight: 500; /* font-medium */
+  outline: none;
+  transition: color 0.2s, background-color 0.2s; /* transition-colors */
+  height: 2.25rem; /* h-9 = 36px */
+  width: 2.25rem; /* w-9 = 36px */
+  border-radius: 9999px; /* rounded-full */
+  pointer-events: auto;
 }
 
-.theme-toggle :hover {
-  color: hsl(var(--accent-foreground));
+.theme-toggle:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(var(--ring-color)),
+    0 0 0 4px hsl(var(--background-color));
+}
+
+.theme-toggle:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.theme-toggle:hover {
   background-color: hsl(var(--accent));
-  border-radius: 9999px;
-  width: 100%;
+  color: hsl(var(--accent-foreground));
 }
 
-.theme-toggle button,
-.theme-toggle [role="button"] {
-  cursor: pointer;
-}
-
-.theme-toggle button,
-.theme-toggle input:where([type="button"]),
-.theme-toggle input:where([type="reset"]),
-.theme-toggle input:where([type="submit"]) {
-  -webkit-appearance: button;
-  background-color: transparent;
-  background-image: none;
-}
-
-.theme-toggle button,
-.theme-toggle select {
-  text-transform: none;
-}
-
-.space-x-8 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(2rem * var(--tw-space-x-reverse));
-  margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+.theme-toggle svg {
+  pointer-events: none;
+  width: 1rem; /* size-4 = 16px */
+  height: 1rem;
+  flex-shrink: 0;
 }
 
 .ring-offset-background {
