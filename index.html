@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme-purple">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Purushothaman R| Web Developer</title>
     <link rel="stylesheet" href="/src/style.css" />
-    <!-- <link
-         rel="stylesheet"
-         href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
-         /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" />
   </head>
   <body>
-    <nav class="">
+    <nav class="navbar">
       <div class="nav-rl">
         <div class="nav-it">
           <div class="logo">
             <a href="/"><span class="logo-font">PR.</span></a>
           </div>
-          <div class="">
+          <div class="nav-res">
             <div class="nav-items">
               <a href="#home" class="nav-link">Home</a
               ><a href="#about" class="nav-link">About</a
@@ -58,9 +57,9 @@
               >
             </div>
           </div>
-          <div class="nav-res">
+          <div class="nav-res1">
             <button
-              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 w-9 rounded-full"
+              class="toggle-btn"
               type="button"
               id="radix-:r2:"
               aria-haspopup="menu"
@@ -84,8 +83,7 @@
               </div>
               <span class="sr-only">Toggle theme</span>
             </button>
-            <button
-              class="inline-flex items-center justify-center p-2 ml-2 rounded-md text-gray-400 hover:text-primary focus:outline-none">
+            <button class="open-menu">
               <span class="sr-only">Open main menu</span>
               <svg
                 class="block h-6 w-6"
@@ -102,28 +100,34 @@
           </div>
         </div>
       </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div class="mobile-menu">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#achievements" class="nav-link">Achievements</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
     </nav>
     <section id="home" class="section-hero">
       <div class="div-home"></div>
-      <div class="section-container">
+      <div class="section-container hero-container">
         <div class="side-1">
-          <span class="span-text" style="opacity: 1; transform: none"
-            >Hello! I'm</span
-          >
-          <h1 class="hero-name" style="opacity: 1; transform: none">
+          <span class="span-text mgb">Hello! I'm</span>
+          <h1 class="hero-name mgb">
             Purushothaman
-            <span class="highlight-text" style="background-size: 100% 3px"
-              >R</span
-            >
+            <span class="highlight-text">R</span>
           </h1>
-          <p class="role-p" style="opacity: 1; transform: none">
+          <p class="role-p mgb">
             Web Developer transitioning into a Frontend-focused role
           </p>
-          <p class="do-p" style="opacity: 1; transform: none">
+          <p class="do-p mgb">
             Crafting intuitive user interfaces and scalable frontend solutions
             using modern web technologies.
           </p>
-          <div class="social" style="opacity: 1; transform: none">
+          <div class="social">
             <div class="social-btns">
               <div class="touch-target" tabindex="0">
                 <a href="#contact" aria-label="Go to contact section"
@@ -274,12 +278,10 @@
     </section>
     <section id="about" class="section-about">
       <div class="about-div"></div>
-      <div class="about-heading">
+      <div class="about-content">
         <h2 class="section-heading" style="opacity: 1; transform: none">
           About Me
         </h2>
-      </div>
-      <div class="about-content">
         <div class="details">
           <div class="about-side-1" style="opacity: 1">
             <div style="opacity: 1; transform: none">
@@ -304,7 +306,7 @@
                 </svg>
                 Bio
               </h3>
-              <p class="bio-p">
+              <p class="bio-p mgb">
                 Front-end and web developer with a passion for crafting
                 innovative, user-friendly digital experiences. I specialize in
                 building responsive, accessible interfaces and combining
@@ -426,7 +428,7 @@
       </div>
     </section>
     <section id="projects" class="project-section">
-      <div class="about-heading">
+      <div class="section-container">
         <h2 class="section-heading" style="opacity: 1; transform: none">
           Projects
         </h2>
@@ -434,8 +436,6 @@
           Here are some of the projects I've worked on, showcasing my skills in
           various technologies and problem domains.
         </p>
-      </div>
-      <div class="section-container">
         <div class="project-grid">
           <div class="project-card" style="animation-delay: 0s">
             <div class="project-pics">
@@ -727,7 +727,7 @@
 
     <section id="skills" class="bg-background">
       <div class="section-container">
-        <div style="opacity: 1; transform: none">
+        <div>
           <h2 class="section-heading">Skills</h2>
           <p class="skills-desc">
             I've specialized in front-end development, working with modern web
@@ -735,16 +735,8 @@
           </p>
         </div>
         <div class="grid-skills" style="opacity: 1">
-          <div
-            class="skills-card"
-            style="
-              opacity: 1;
-              transform: none;
-              box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-                rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-                rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
-            ">
-            <div class="skills-heading-div flex items-center gap-3 mb-4">
+          <div class="skills-card">
+            <div class="skills-heading-div">
               <div class="svg-div">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -761,44 +753,17 @@
                   <line x1="12" x2="20" y1="19" y2="19"></line>
                 </svg>
               </div>
-              <h3 class="text-lg font-semibold skill-heading">
-                Programming Languages
-              </h3>
+              <h3 class="skill-heading">Programming Languages</h3>
             </div>
             <div class="flex flex-wrap gap-2 skill-area" style="opacity: 1">
-              <span
-                class="skill-span inline-block px-3 py-1 bg-background border border-border rounded-full text-sm"
-                tabindex="0"
-                style="opacity: 1; transform: scale(0.999472)"
-                >JavaScript</span
-              ><span
-                class="skill-span inline-block px-3 py-1 bg-background border border-border rounded-full text-sm"
-                tabindex="0"
-                style="
-                  opacity: 1;
-                  transform: none;
-                  background-color: rgb(247, 250, 252);
-                "
-                >HTML</span
-              ><span
-                class="skill-span inline-block px-3 py-1 bg-background border border-border rounded-full text-sm"
-                tabindex="0"
-                style="opacity: 1; transform: none"
-                >CSS</span
-              >
+              <span class="skill-span" tabindex="0">JavaScript</span
+              ><span class="skill-span" tabindex="0">HTML</span
+              ><span class="skill-span" tabindex="0">CSS</span>
             </div>
           </div>
-          <div
-            class="skills-card rounded-lg p-6 shadow-sm border border-border hover:border-primary/20 transition-colors"
-            style="
-              opacity: 1;
-              transform: none;
-              box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-                rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-                rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
-            ">
-            <div class="skills-heading-div items-center gap-3 mb-4">
-              <div class="svg-div p-2 bg-primary/10 text-primary rounded-md">
+          <div class="skills-card">
+            <div class="skills-heading-div">
+              <div class="svg-div">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -815,34 +780,17 @@
                   <path d="M9 21V9"></path>
                 </svg>
               </div>
-              <h3 class="text-lg font-semibold skill-heading">
-                Frontend Development
-              </h3>
+              <h3 class="skill-heading">Frontend Development</h3>
             </div>
-            <div class="flex flex-wrap gap-2 skill-area" style="opacity: 1">
-              <span
-                class="skill-span inline-block px-3 py-1 bg-background border border-border rounded-full text-sm"
-                tabindex="0"
-                style="opacity: 1; transform: scale(0.999472)"
-                >React</span
-              ><span
-                class="skill-span px-3 py-1 bg-background border border-border rounded-full text-sm"
-                tabindex="0"
-                style="opacity: 1; transform: none"
-                >BootStrap</span
-              ><span
-                class="skill-span inline-block px-3 py-1 bg-background border border-border rounded-full text-sm"
-                tabindex="0"
-                style="opacity: 1; transform: none"
-                >Tailwind CSS</span
-              >
+            <div class="skill-area">
+              <span class="skill-span" tabindex="0">React</span
+              ><span class="skill-span" tabindex="0">BootStrap</span
+              ><span class="skill-span" tabindex="0">Tailwind CSS</span>
             </div>
           </div>
-          <div
-            class="skills-card rounded-lg p-6 shadow-sm border border-border hover:border-primary/20 transition-colors"
-            style="opacity: 1; transform: none">
-            <div class="flex items-center gap-3 mb-4 skills-heading-div">
-              <div class="p-2 bg-primary/10 text-primary rounded-md svg-div">
+          <div class="skills-card">
+            <div class="skills-heading-div">
+              <div class="svg-div">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -858,24 +806,15 @@
                   <polyline points="8 6 2 12 8 18"></polyline>
                 </svg>
               </div>
-              <h3 class="text-lg font-semibold skill-heading">
-                Backend Development
-              </h3>
+              <h3 class="skill-heading">Backend Development</h3>
             </div>
-            <div class="flex flex-wrap gap-2 skill-area" style="opacity: 1">
-              <span
-                class="skill-span inline-block px-3 py-1 bg-background border border-border rounded-full text-sm"
-                tabindex="0"
-                style="opacity: 1; transform: scale(0.999472)"
-                >Node.js</span
-              >
+            <div class="skill-area">
+              <span class="skill-span" tabindex="0">Node.js</span>
             </div>
           </div>
-          <div
-            class="skills-card rounded-lg p-6 shadow-sm border border-border hover:border-primary/20 transition-colors"
-            style="opacity: 1; transform: none">
-            <div class="flex items-center gap-3 mb-4 skills-heading-div">
-              <div class="p-2 bg-primary/10 text-primary rounded-md svg-div">
+          <div class="skills-card">
+            <div class="skills-heading-div">
+              <div class="svg-div">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -892,39 +831,17 @@
                   <path d="M3 12A9 3 0 0 0 21 12"></path>
                 </svg>
               </div>
-              <h3 class="text-lg font-semibold skill-heading">Databases</h3>
+              <h3 class="skill-heading">Databases</h3>
             </div>
-            <div class="flex flex-wrap gap-2 skill-area" style="opacity: 1">
-              <span
-                class="skill-span inline-block px-3 py-1 bg-background border border-border rounded-full text-sm"
-                tabindex="0"
-                style="opacity: 1; transform: scale(0.999472)"
-                >MongoDB</span
-              ><span
-                class="skill-span inline-block px-3 py-1 bg-background border border-border rounded-full text-sm"
-                tabindex="0"
-                style="opacity: 1; transform: none"
-                >Firebase</span
-              >
-              <span
-                class="skill-span inline-block px-3 py-1 bg-background border border-border rounded-full text-sm"
-                tabindex="0"
-                style="opacity: 1; transform: none"
-                >PL/SQL</span
-              >
+            <div class="skill-area">
+              <span class="skill-span" tabindex="0">MongoDB</span
+              ><span class="skill-span" tabindex="0">Firebase</span>
+              <span class="skill-span" tabindex="0">PL/SQL</span>
             </div>
           </div>
-          <div
-            class="skills-card rounded-lg p-6 shadow-sm border border-border hover:border-primary/20 transition-colors"
-            style="
-              opacity: 1;
-              transform: none;
-              box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-                rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-                rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
-            ">
-            <div class="flex items-center gap-3 mb-4 skills-heading-div">
-              <div class="p-2 bg-primary/10 text-primary rounded-md svg-div">
+          <div class="skills-card">
+            <div class="skills-heading-div">
+              <div class="svg-div">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -948,26 +865,11 @@
                   <path d="M9 20v2"></path>
                 </svg>
               </div>
-              <h3 class="text-lg font-semibold skill-heading">
-                Tools &amp; Technologies
-              </h3>
+              <h3 class="skill-heading">Tools &amp; Technologies</h3>
             </div>
-            <div class="flex flex-wrap gap-2 skill-area" style="opacity: 1">
-              <span
-                class="skill-span inline-block px-3 py-1 bg-background border border-border rounded-full text-sm"
-                tabindex="0"
-                style="opacity: 1; transform: scale(0.999472)"
-                >Git</span
-              ><span
-                class="skill-span inline-block px-3 py-1 bg-background border border-border rounded-full text-sm"
-                tabindex="0"
-                style="
-                  opacity: 1;
-                  transform: scale(0.996066);
-                  background-color: rgb(247, 250, 252);
-                "
-                >Agile/Scrum</span
-              >
+            <div class="skill-area">
+              <span class="skill-span">Git</span
+              ><span class="skill-span" tabindex="0">Agile/Scrum</span>
             </div>
           </div>
           <!-- <div
@@ -1016,27 +918,27 @@
             </div>
             <div class="flex flex-wrap gap-2" style="opacity: 1">
               <span
-                class="skill-span inline-block px-3 py-1 bg-background border border-border rounded-full text-sm"
+                class="skill-span"
                 tabindex="0"
                 style="opacity: 1; transform: scale(0.999472)"
                 >Figma</span
               ><span
-                class="skill-span inline-block px-3 py-1 bg-background border border-border rounded-full text-sm"
+                class="skill-span"
                 tabindex="0"
                 style="opacity: 1; transform: scale(0.998958)"
                 >Adobe AI</span
               ><span
-                class="skill-span inline-block px-3 py-1 bg-background border border-border rounded-full text-sm"
+                class="skill-span"
                 tabindex="0"
                 style="opacity: 1; transform: none"
                 >UI/UX Design</span
               ><span
-                class="skill-span inline-block px-3 py-1 bg-background border border-border rounded-full text-sm"
+                class="skill-span"
                 tabindex="0"
                 style="opacity: 1; transform: none"
                 >Wireframing</span
               ><span
-                class="skill-span inline-block px-3 py-1 bg-background border border-border rounded-full text-sm"
+                class="skill-span"
                 tabindex="0"
                 style="opacity: 1; transform: none"
                 >Prototyping</span
@@ -1048,148 +950,573 @@
     </section>
 
     <section id="achievements" class="section-achievement">
-     <div class="section-container">
-      <div style="opacity: 1; transform: none;">
-         <h2 class="section-heading">Certification</h2>
-         <p class="desc-achievements">A collection of my professional accomplishments and certifications earned throughout my journey.</p>
-      </div>
-      <div class="achievement-slide-menu">
-         <div class="drag-explore">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-grip h-4 w-4 mr-2">
-               <circle cx="12" cy="5" r="1"></circle>
-               <circle cx="19" cy="5" r="1"></circle>
-               <circle cx="5" cy="5" r="1"></circle>
-               <circle cx="12" cy="12" r="1"></circle>
-               <circle cx="19" cy="12" r="1"></circle>
-               <circle cx="5" cy="12" r="1"></circle>
-               <circle cx="12" cy="19" r="1"></circle>
-               <circle cx="19" cy="19" r="1"></circle>
-               <circle cx="5" cy="19" r="1"></circle>
+      <div class="section-container">
+        <div style="opacity: 1; transform: none">
+          <h2 class="section-heading">Certification</h2>
+          <p class="desc-achievements">
+            A collection of my professional accomplishments and certifications
+            earned throughout my journey.
+          </p>
+        </div>
+        <div class="achievement-slide-menu">
+          <div class="drag-explore">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-grip h-4 w-4 mr-2">
+              <circle cx="12" cy="5" r="1"></circle>
+              <circle cx="19" cy="5" r="1"></circle>
+              <circle cx="5" cy="5" r="1"></circle>
+              <circle cx="12" cy="12" r="1"></circle>
+              <circle cx="19" cy="12" r="1"></circle>
+              <circle cx="5" cy="12" r="1"></circle>
+              <circle cx="12" cy="19" r="1"></circle>
+              <circle cx="19" cy="19" r="1"></circle>
+              <circle cx="5" cy="19" r="1"></circle>
             </svg>
             <span class="show-on-md">Drag to explore</span>
             <span class="hide-on-md">Swipe to explore</span>
-         </div>
-         <div class="prev-next">
+          </div>
+          <div class="prev-next">
             <button class="prev-achievement" aria-label="Scroll left">
-               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left h-4 w-4">
-                  <path d="m15 18-6-6 6-6"></path>
-               </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-chevron-left h-4 w-4">
+                <path d="m15 18-6-6 6-6"></path>
+              </svg>
             </button>
             <button class="next-achievement" aria-label="Scroll right">
-               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right h-4 w-4">
-                  <path d="m9 18 6-6-6-6"></path>
-               </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-chevron-right h-4 w-4">
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
             </button>
-         </div>
+          </div>
+        </div>
+        <div class="achievement-content">
+          <div class="achieve-card">
+            <div class="content-achiv">
+              <div class="achieve-svg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-award h-5 w-5">
+                  <path
+                    d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
+                  <circle cx="12" cy="8" r="6"></circle>
+                </svg>
+              </div>
+              <div>
+                <p class="achieved-year">2022</p>
+                <h3 class="title-achievement">
+                  Android Application Development
+                </h3>
+              </div>
+            </div>
+            <p class="achievement-desc">
+              Completed specialized training in Android application development
+              techniques.
+            </p>
+            <span class="tag-achieve">Certification</span>
+          </div>
+
+          <div class="achieve-card">
+            <div class="content-achiv">
+              <div class="achieve-svg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-award h-5 w-5">
+                  <path
+                    d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
+                  <circle cx="12" cy="8" r="6"></circle>
+                </svg>
+              </div>
+              <div>
+                <p class="achieved-year">2022</p>
+                <h3 class="title-achievement">Procedural Language In SQL</h3>
+              </div>
+            </div>
+            <p class="achievement-desc">
+              Completed specialized training in procedural programming
+              techniques using SQL.
+            </p>
+            <span class="tag-achieve">Certification</span>
+          </div>
+
+          <div class="achieve-card">
+            <div class="content-achiv">
+              <div class="achieve-svg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-award h-5 w-5">
+                  <path
+                    d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
+                  <circle cx="12" cy="8" r="6"></circle>
+                </svg>
+              </div>
+              <div>
+                <p class="achieved-year">2025</p>
+                <h3 class="title-achievement">Responsive Web Design</h3>
+              </div>
+            </div>
+            <p class="achievement-desc">
+              Completed specialized training in responsive web design
+              techniques.
+            </p>
+            <span class="tag-achieve">Certification</span>
+          </div>
+
+          <div class="achieve-card">
+            <div class="content-achiv">
+              <div class="achieve-svg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-award h-5 w-5">
+                  <path
+                    d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
+                  <circle cx="12" cy="8" r="6"></circle>
+                </svg>
+              </div>
+              <div>
+                <p class="achieved-year">2025</p>
+                <h3 class="title-achievement">
+                  JavaScript Algorithms and Data Structures
+                </h3>
+              </div>
+            </div>
+            <p class="achievement-desc">
+              Completed specialized training in JavaScript algorithms and data
+              structures.
+            </p>
+            <span class="tag-achieve">Certification</span>
+          </div>
+
+          <div class="achieve-card">
+            <div class="content-achiv">
+              <div class="achieve-svg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-award h-5 w-5">
+                  <path
+                    d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
+                  <circle cx="12" cy="8" r="6"></circle>
+                </svg>
+              </div>
+              <div>
+                <p class="achieved-year">2025</p>
+                <h3 class="title-achievement">
+                  Front-end Development Libraries
+                </h3>
+              </div>
+            </div>
+            <p class="achievement-desc">
+              Completed specialized training in front-end development libraries.
+            </p>
+            <span class="tag-achieve">Certification</span>
+          </div>
+
+          <div class="achieve-card">
+            <div class="content-achiv">
+              <div class="achieve-svg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-award h-5 w-5">
+                  <path
+                    d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
+                  <circle cx="12" cy="8" r="6"></circle>
+                </svg>
+              </div>
+              <div>
+                <p class="achieved-year">2025</p>
+                <h3 class="title-achievement">Full Stack Development</h3>
+              </div>
+            </div>
+            <p class="achievement-desc">
+              Completed specialized training in full stack development with
+              JavaScript.
+            </p>
+            <span class="tag-achieve">Certification</span>
+          </div>
+        </div>
       </div>
-      <div class="achievement-content">
-         <div class="achieve-card">
-            <div class="content-achiv">
-               <div class="achieve-svg">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award h-5 w-5">
-                     <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
-                     <circle cx="12" cy="8" r="6"></circle>
-                  </svg>
-               </div>
-               <div>
-                  <p class="achieved-year">2022</p>
-                  <h3 class="title-achievement">Android Application Development</h3>
-               </div>
-            </div>
-            <p class="achievement-desc">Completed specialized training in Android application development techniques.</p>
-            <span class="tag-achieve">Certification</span>
-         </div>
-
-         <div class="achieve-card">
-            <div class="content-achiv">
-               <div class="achieve-svg">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award h-5 w-5">
-                     <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
-                     <circle cx="12" cy="8" r="6"></circle>
-                  </svg>
-               </div>
-               <div>
-                  <p class="achieved-year">2022</p>
-                  <h3 class="title-achievement">Procedural Language In SQL</h3>
-               </div>
-            </div>
-            <p class="achievement-desc">Completed specialized training in procedural programming techniques using SQL.</p>
-            <span class="tag-achieve">Certification</span>
-         </div>
-
-         <div class="achieve-card">
-            <div class="content-achiv">
-               <div class="achieve-svg">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award h-5 w-5">
-                     <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
-                     <circle cx="12" cy="8" r="6"></circle>
-                  </svg>
-               </div>
-               <div>
-                  <p class="achieved-year">2025</p>
-                  <h3 class="title-achievement">Responsive Web Design</h3>
-               </div>
-            </div>
-            <p class="achievement-desc">Completed specialized training in responsive web design techniques.</p>
-            <span class="tag-achieve">Certification</span>
-         </div>
-
-         <div class="achieve-card">
-            <div class="content-achiv">
-               <div class="achieve-svg">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award h-5 w-5">
-                     <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
-                     <circle cx="12" cy="8" r="6"></circle>
-                  </svg>
-               </div>
-               <div>
-                  <p class="achieved-year">2025</p>
-                  <h3 class="title-achievement">JavaScript Algorithms and Data Structures</h3>
-               </div>
-            </div>
-            <p class="achievement-desc">Completed specialized training in JavaScript algorithms and data structures.</p>
-            <span class="tag-achieve">Certification</span>
-         </div>
-
-         <div class="achieve-card">
-            <div class="content-achiv">
-               <div class="achieve-svg">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award h-5 w-5">
-                     <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
-                     <circle cx="12" cy="8" r="6"></circle>
-                  </svg>
-               </div>
-               <div>
-                  <p class="achieved-year">2025</p>
-                  <h3 class="title-achievement">Front-end Development Libraries</h3>
-               </div>
-            </div>
-            <p class="achievement-desc">Completed specialized training in front-end development libraries.</p>
-            <span class="tag-achieve">Certification</span>
-         </div>
-
-         <div class="achieve-card">
-            <div class="content-achiv">
-               <div class="achieve-svg">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award h-5 w-5">
-                     <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
-                     <circle cx="12" cy="8" r="6"></circle>
-                  </svg>
-               </div>
-               <div>
-                  <p class="achieved-year">2025</p>
-                  <h3 class="title-achievement">Full Stack Development</h3>
-               </div>
-            </div>
-            <p class="achievement-desc">Completed specialized training in full stack development with JavaScript.</p>
-            <span class="tag-achieve">Certification</span>
-         </div>
-      </div>
-   </div>
     </section>
 
-    
+    <section id="contact" class="section-contact">
+      <div class="section-container">
+        <h2 class="section-heading">Get In Touch</h2>
+        <p class="contact-desc">
+          Have a question or want to work together? Feel free to drop me a
+          message. I'd love to hear from you!
+        </p>
+        <div class="contact-form">
+          <div class="contact-infos">
+            <div>
+              <h3 class="contact-sub-head">Contact Information</h3>
+              <p class="desc-in">
+                Fill up the form and I'll get back to you as soon as possible.
+              </p>
+            </div>
+            <div class="space-y-4">
+              <div class="contact-info">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-mail w-5 h-5 mt-1 text-primary">
+                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+                <div>
+                  <h4 class="contact-message">Email</h4>
+                  <p class="contact-dets">
+                    <a href="mailto:aathifzahir12@gmail.com"
+                      >aathifzahir12@gmail.com</a
+                    >
+                  </p>
+                </div>
+              </div>
+              <div class="contact-info">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-phone w-5 h-5 mt-1 text-primary">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <div>
+                  <h4 class="contact-message">Phone</h4>
+                  <p class="contact-dets">
+                    <a href="tel:+94 76 527 1411">+94 76 527 1411</a>
+                  </p>
+                </div>
+              </div>
+              <div class="contact-info">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-map-pin w-5 h-5 mt-1 text-primary">
+                  <path
+                    d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <div>
+                  <h4 class="contact-message">Location</h4>
+                  <p class="contact-dets">Colombo, Sri Lanka</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 class="social-title">Connect with me</h3>
+              <div class="social-div space-x-4">
+                <a
+                  href="https://github.com/aathifzahir"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  class="link-logo"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-github">
+                    <path
+                      d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                    <path d="M9 18c-4.51 2-5-2-7-2"></path></svg></a
+                ><a
+                  href="https://linkedin.com/in/aathifzahir"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  class="link-logo"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-linkedin">
+                    <path
+                      d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect width="4" height="12" x="2" y="9"></rect>
+                    <circle cx="4" cy="4" r="2"></circle></svg></a
+                ><a
+                  href="mailto:aathifzahir12@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Email"
+                  class="link-logo"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-mail">
+                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-forms">
+            <form class="contact-card">
+              <input
+                type="hidden"
+                name="access_key"
+                value="6c14b370-ac51-45bc-b933-1a3ed381b3d1" /><input
+                type="hidden"
+                name="redirect"
+                value="https://web3forms.com/success" />
+              <div class="grid-l1">
+                <div class="form-details">
+                  <label for="name" class="input-label">Your Name</label
+                  ><input
+                    class="input-cls"
+                    id="name"
+                    name="name"
+                    placeholder="John Doe"
+                    required=""
+                    value="" />
+                </div>
+                <div class="form-details">
+                  <label for="email" class="input-label">Your Email</label
+                  ><input
+                    type="email"
+                    class="input-cls"
+                    id="email"
+                    name="email"
+                    placeholder="john@example.com"
+                    required=""
+                    value="" />
+                </div>
+              </div>
+              <div class="form-details">
+                <label for="subject" class="input-label">Subject</label
+                ><input
+                  class="input-cls"
+                  id="subject"
+                  name="subject"
+                  placeholder="How can I help you?"
+                  required=""
+                  value="" />
+              </div>
+              <div class="form-details">
+                <label for="message" class="input-label">Message</label
+                ><textarea
+                  class="input-textarea"
+                  id="message"
+                  name="message"
+                  placeholder="Your message here..."
+                  rows="5"
+                  required=""></textarea>
+              </div>
+              <button class="sub-btn" type="submit">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <footer>
+      <div class="footer-container">
+        <div class="footer-flex">
+          <div class="footer-right">
+            <div class="logo">
+              <span>AZ.</span>
+            </div>
+            <p class="footer-content">
+              Building elegant digital solutions with a focus on user experience
+              and technical excellence.
+            </p>
+          </div>
+          <div class="social-section">
+            <div class="social-icons">
+              <a
+                href="https://github.com/aathifzahir"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                class="social-link">
+                <!-- GitHub SVG -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-github">
+                  <path
+                    d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                  <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                </svg>
+              </a>
+              <a
+                href="https://linkedin.com/in/aathifzahir"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                class="social-link">
+                <!-- LinkedIn SVG -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-linkedin">
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect width="4" height="12" x="2" y="9"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a
+                href="mailto:aathifzahir12@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Email"
+                class="social-link">
+                <!-- Email SVG -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-mail">
+                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="footer-text">
+              <p>
+                © 2025 Purushothaman R | Built with HTML, CSS and JavaScript
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
+    <script src="/src/script.js"></script>
   </body>
 </html>
