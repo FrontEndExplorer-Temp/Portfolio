@@ -1323,6 +1323,7 @@ a {
 }
 
 .skills-desc {
+>>>>>>> 1da791e4129cf10a0b70964a3ad71f137b95625f
   color: hsl(var(--muted-foreground));
   max-width: 42rem;
   margin-bottom: 3rem;
@@ -1644,6 +1645,8 @@ a {
   padding-right: 0.5rem;
   border-radius: 9999px;
 }
+<<<<<<< HEAD
+=======
 
 .contact-desc {
   color: hsl(var(--muted-foreground));
