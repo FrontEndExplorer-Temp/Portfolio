@@ -559,31 +559,36 @@ a {
   flex-direction: row;
   display: flex;
 }
+.touch-target {
+  display: inline-block; /* required for transform to work effectively */
+  transition: transform 0.2s ease-in-out;
+}
+
+.touch-target:hover {
+  transform: scale(1.05);
+}
 
 .contact-me {
-  border-color: hsl(var(--input));
-  background-color: hsl(var(--primary));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  border-radius: calc(var(--radius) - 2px);
   font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
   font-size: 1rem;
   line-height: 1.5rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  border-radius: calc(var(--radius) - 2px);
-  white-space: nowrap;
-  gap: 0.5rem;
-  justify-content: center;
-  align-items: center;
+  padding: 0.75rem 1rem;
   min-width: 120px;
   height: 2.5rem;
-  display: inline-flex;
-  cursor: pointer;
-  color: #fff;
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  outline: none;
 }
 
 .contact-me:hover {
-  background-color: hsl(var(--primary) / 10);
+  background-color: hsl(var(--primary) / 0.9);
 }
 
 .project-btn {
@@ -700,14 +705,21 @@ a {
 .code-bg {
   padding: 1.5rem;
   background-color: var(--codebg);
-  --tw-border-opacity: 1;
-  border-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
+  border-color: rgba(229, 231, 235, var(--tw-border-opacity, 1));
   border-width: 1px;
   border-radius: 1rem;
   position: relative;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.code-bg:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
 .code-nav {
   justify-content: space-between;
   align-items: center;
@@ -1277,6 +1289,12 @@ a {
   background-color: hsl(var(--card));
   border: 1px solid hsl(var(--border));
   border-radius: var(--radius);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
 .skills-heading-div {
@@ -1318,20 +1336,15 @@ a {
   background-color: hsl(var(--background));
   border: 1px solid hsl(var(--border));
   border-radius: 9999px;
-  opacity: 1;
-  transform: scale(0);
-  background-color: rgb(
-    247,
-    250,
-    252
-  ); /* This will override the hsl background if both are present */
-  transition: transform 0.2s ease-in-out;
+  transform: scale(1);
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 .skill-span:hover {
   transform: scale(1.05);
-  background-color: rgba(var(--primary), 0.05);
+  background-color: hsl(var(--primary), 0.05);
 }
+
 .section-achievement {
   background-color: hsl(var(--background) / 0.5);
 }
