@@ -143,13 +143,15 @@ html {
 
 .navbar {
   position: fixed;
+  top: 0;
   z-index: 50;
-  background-color: transparent;
+  width: 100%;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3); /* 40% opaque white */
+  backdrop-filter: blur(10px); /* apply the blur */
+  -webkit-backdrop-filter: blur(10px); /* for Safari support */
   transition: all 0.3s ease;
-  top: 0;
 }
 
 .nav-rl {
@@ -351,6 +353,58 @@ a {
 
 .open-menu:focus {
   outline: none; /* focus:outline-none */
+}
+
+.theme-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: hsl(var(--popover)); /* dynamic background */
+  color: hsl(var(--popover-foreground)); /* dynamic text color */
+  border: 1px solid hsl(var(--border));
+  border-radius: 4px;
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0 0;
+  min-width: 150px;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.theme-menu li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.theme-menu li:hover {
+  background-color: hsl(var(--muted));
+  color: hsl(var(--muted-foreground));
+}
+
+.hidden {
+  display: none;
+}
+
+.theme-dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Themes */
+.theme-blue {
+  background-color: hsl(210, 50%, 98%);
+  color: hsl(215, 25%, 27%);
+}
+
+.theme-dark {
+  background-color: hsl(222, 84%, 4.9%);
+  color: hsl(210, 40%, 98%);
+}
+
+.theme-purple {
+  background-color: hsl(260, 50%, 98%);
+  color: hsl(250, 25%, 27%);
 }
 
 .theme-toggle {
@@ -1209,18 +1263,21 @@ a {
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1.75rem;
+  padding-bottom: 1rem;
 }
 
 .project-description {
   color: hsl(var(--muted-foreground));
   font-size: 0.875rem;
   line-height: 1.25rem;
+  padding-bottom: 1rem;
 }
 
 .skills {
   gap: 0.5rem;
   flex-wrap: wrap;
   display: flex;
+  padding-bottom: 1rem;
 }
 
 .project-skill {
@@ -1248,7 +1305,7 @@ a {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   background-color: hsl(var(--background));
-  border-radius: calc(var(--radius)- 2px);
+  border-radius: 12px;
   border-color: hsl(var(--input));
   border-width: 1px;
   white-space: nowrap;
@@ -1258,6 +1315,11 @@ a {
   height: 2.25rem;
   display: flex;
   text-decoration: none;
+}
+
+.external-link:hover {
+  color: hsl(var(--accent-foreground));
+  background-color: hsl(var(--accent));
 }
 
 .skills-desc {
@@ -1956,4 +2018,101 @@ footer {
   color: #9ca3af; /* text-gray-400 */
   font-size: 0.875rem; /* text-sm */
   text-align: right;
+}
+
+.custom-toast {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 12px;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  bottom: 30px;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.5s ease, bottom 0.5s ease;
+}
+
+.custom-toast.show {
+  visibility: visible;
+  opacity: 1;
+  bottom: 50px;
+}
+
+.error-popup {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  background-color: #f44336;
+  color: white;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  z-index: 999;
+  animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.form-details {
+  position: relative;
+}
+
+.achievement-swiper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .swiper-wrapper {
+    flex-direction: column;
+  }
+
+  .swiper-slide {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .achievement-swiper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: auto;
+    padding-right: 1rem; /* optional for scrollbar spacing */
+  }
+
+  .swiper-wrapper {
+    display: contents; /* disables Swiper's flex wrapper layout */
+  }
+
+  .swiper-slide {
+    flex: none; /* avoid Swiper flex behavior */
+    width: 100%;
+  }
+
+  .prev-next,
+  .drag-explore {
+    display: none; /* hide swiper controls */
+  }
 }
