@@ -207,6 +207,7 @@ a {
   line-height: 1.75rem;
   color: hsl(var(--primary));
   font-family: "VIRUST", sans-serif;
+  letter-spacing: 0.2rem;
 }
 
 .mobile-menu {
@@ -463,7 +464,6 @@ a {
 }
 .section-hero {
   padding-top: 4rem;
-  overflow: hidden;
   display: flex;
   align-items: center;
   position: relative;
@@ -484,12 +484,13 @@ a {
   margin-left: auto;
   margin-right: auto;
   max-width: 80rem;
-  padding: 3rem 1rem;
+  padding: 6rem 1rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 640px) {
   .section-container {
-    flex-direction: row;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 
@@ -497,13 +498,6 @@ a {
   .section-container {
     padding-left: 2rem;
     padding-right: 2rem;
-  }
-}
-
-@media (min-width: 640px) {
-  .section-container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
   }
 }
 
@@ -587,23 +581,25 @@ a {
 }
 
 .social {
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
   display: flex;
-  z-index: 10;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; /* 4 units (1rem = 16px by default in most browsers) */
   position: relative;
-}
-
-@media (min-width: 1024px) {
-  .social {
-    justify-content: flex-start;
-  }
+  z-index: 10;
 }
 
 @media (min-width: 640px) {
   .social {
     flex-direction: row;
+    justify-content: center; /* Sm breakpoint: sm:flex-row */
+  }
+}
+
+@media (min-width: 1024px) {
+  .social {
+    justify-content: flex-start; /* lg breakpoint: lg:justify-start */
   }
 }
 
@@ -741,6 +737,7 @@ a {
 
 .side-2 {
   max-width: 28rem;
+  min-height: 298px;
   width: 100%;
 }
 
@@ -2083,4 +2080,19 @@ footer {
   .drag-explore {
     display: none;
   }
+}
+
+.logo-footer {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: hsl(var(--primary));
+  letter-spacing: 0.2rem;
+}
+
+.logo-footer span {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: hsl(var(--primary));
+  font-family: "VIRUST", sans-serif;
 }
