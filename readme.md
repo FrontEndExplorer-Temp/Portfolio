@@ -48,12 +48,13 @@ Hi, I'm **Purushothaman R**, a web developer passionate about building beautiful
 Portfolio/
 ├── index.html
 └── src/
-├── favicon/
-├── font/
-├── images/
-├── resume/
-├── script.js
-└── style.css
+    ├── favicon/
+    ├── font/
+    ├── images/
+    ├── resume/
+    ├── script.js
+    └── style.css
+
 
 ---
 
