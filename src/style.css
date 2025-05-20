@@ -661,6 +661,7 @@ a {
   height: 2.5rem;
   display: inline-flex;
   cursor: pointer;
+  color: inherit;
 }
 
 .project-btn:hover {
