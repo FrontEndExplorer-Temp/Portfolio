@@ -184,6 +184,18 @@
     <div id="notification" class="notification"></div>
 
     <script src="config.js"></script>
-    <script src="admin.js?v=1.1"></script>
+        <script>
+      // Wait for PortfolioConfig to be ready before loading admin.js
+      function loadAdminScript() {
+        var script = document.createElement('script');
+        script.src = 'admin.js?v=1.1';
+        document.body.appendChild(script);
+      }
+      if (window.PortfolioConfigReady) {
+        loadAdminScript();
+      } else {
+        document.addEventListener('PortfolioConfigReady', loadAdminScript);
+      }
+    </script>
 </body>
 </html> 
