@@ -587,10 +587,8 @@ function handleFileImport(event) {
 }
 
 // Initialize admin panel after configuration loads
-async function initializeAdmin() {
-    // Wait for configuration to load
-    await window.PortfolioConfig.init();
-    
+function initializeAdmin() {
+    // Configuration is already loaded synchronously
     // Initialize admin panel
     window.admin = new PortfolioAdmin();
 }
