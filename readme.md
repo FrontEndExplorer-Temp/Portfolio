@@ -2,7 +2,7 @@
 
 Hi, I'm **Purushothaman R**, a web developer passionate about building beautiful and functional web applications. This portfolio showcases my skills, projects, and experience.
 
-> > 🚀 **Live Site:** [Portfolio Link](https://purushoth-dev.netlify.app)
+> 🚀 **Live Site:** [Portfolio Link](https://purushoth-dev.netlify.app)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2914e524-56c4-4ece-8273-a288d62518ec/deploy-status)](https://app.netlify.com/projects/purushoth-dev/deploys)
 
