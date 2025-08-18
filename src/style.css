@@ -1566,8 +1566,8 @@ a {
 }
 
 .achieve-card {
-  min-width: 300px;
-  max-width: 300px;
+  width: 300px !important;
+  height: 260px !important;
   background-color: hsl(var(--card));
   padding: 1.5rem;
   border-radius: 0.5rem;
@@ -1578,6 +1578,9 @@ a {
   opacity: 1;
   transform: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .achieve-card:hover {
